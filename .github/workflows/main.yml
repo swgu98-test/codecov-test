@@ -1,0 +1,14 @@
+name: xx
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+
+jobs:
+  test:
+    name: tt
+    runs-on: ubuntu-latest
+    steps:
+    - name: make
+      run: |
+        echo "hh"
