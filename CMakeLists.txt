@@ -31,6 +31,6 @@ add_executable(test_my_add test_my_add.cpp ${SOURCE_FILES})
 if(ENABLE_TESTS)
     enable_testing()
     # 添加测试
-    add_test(NAME MyTest COMMAND runTests)
+    add_test(NAME test_my_add COMMAND ./test_my_add)
 endif()
 
