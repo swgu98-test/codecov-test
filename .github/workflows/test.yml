@@ -25,6 +25,7 @@ jobs:
         make
 
     - name: test my add
+      working-directory: build
       run: |
         ctest 
 
