@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   test:
-    name: tt
+    name: pr_cov
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
