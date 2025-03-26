@@ -1,0 +1,36 @@
+name: CI
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions: read-all
+
+concurrency:
+  group: ${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: tt
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v4
+        
+    - name: make
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: test my add
+      working-directory: build
+      run: |
+        ctest 
+
+    - name: Upload coverage report
+      uses: codecov/codecov-action@v5
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        
