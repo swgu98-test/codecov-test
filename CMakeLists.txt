@@ -27,6 +27,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 # 添加可执行文件
 add_executable(test_my_add test_my_add.cpp ${SOURCE_FILES})
 add_executable(b b.cpp)
+add_executable(c c.cpp)
 
 # 启用测试
 if(ENABLE_TESTS)
