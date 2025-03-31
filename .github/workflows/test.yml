@@ -22,12 +22,20 @@ jobs:
         mkdir build
         cd build
         cmake ..
+        echo =========
+        find . -type f
+        echo =========
         make
+        find . -type f
 
     - name: test my add
       working-directory: build
       run: |
         ctest 
+        echo =========
+        find . -type f
+        echo =========
+        find . -type f
 
     - name: Upload coverage report
       uses: codecov/codecov-action@v5
